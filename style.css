@@ -1,0 +1,66 @@
+:root {
+  --bg: #fbf1c7;
+  --fg1: #3c3836;
+  --h1: #d65d0e;
+  --purple: #b16286;
+  --blue: #458588;
+}
+
+/* Gruvbox (dark) */
+[data-theme="gruvbox-dark"] {
+  --bg: #282828;
+  --fg1: #ebdbb2;
+  --h1: #d65d0e;
+  /* ... */
+}
+
+/* Gruvbox (light) */
+[data-theme="gruvbox-light"] {
+  --bg: #fbf1c7;
+  --fg1: #3c3836;
+  --h1: #d65d0e;
+  --purple: #b16286;
+  --blue: #458588;
+}
+@font-face {
+  font-family: "JetBrainsMono Nerd";
+  src: url("https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts/patched-fonts/JetBrainsMono/Regular/complete/JetBrainsMono%20Nerd%20Font%20Complete%20Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "JetBrainsMono Nerd", monospace;
+  /* color: var(--fg1); */
+
+  font-size: 100%;
+  /* background-image: url(/images/bg.png); */
+
+  text-align: left;
+}
+
+#main {
+  background-color: var(--bg);
+  border: 3px solid;
+  border-color: darkgrey;
+  color: var(--fg1);
+  padding: 0px 20px 20px 20px;
+  width: 60%;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+h1 {
+  color: var(--h1);
+  font-size: 300%;
+}
+a {
+  color: var(--blue);
+}
+a:visited {
+  color: var(--purple);
+}

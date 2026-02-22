@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="gruvbox-light">
+
+  <body>
+    <link rel="stylesheet" href="style.css">
+    <div id="main">
+   <h1><b><u><strong>MY WEBBSITE!!1!</strong></u></b></h1>
+    <h2>About me</h2>
+    <p>My name is Bobo and I'm 17 years old.</p>
+
+    <h2>Thins I likge</h2>
+    <p>
+    <ul>
+    <li>Video Games</li>
+    <li>Low-level Programming</li>
+    <li>Music (Favorite band is Metallica right now)</li>
+    </ul>
+    </p>
+
+    <p>
+      <a href="test/a.html">redirect</a>
+    </p> </body>
+
+<!-- A small theme switcher with script to quickly swap between light/dark mode -->
+  <select id="theme-select">
+  <option value="gruvbox-light">Grubox Light</option>
+  <option value="gruvbox-dark">Grruvox Dark</option>
+</select>
+
+  <script>
+const select = document.getElementById("theme-select");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  document.documentElement.setAttribute("data-theme", savedTheme);
+  select.value = savedTheme;
+}
+
+// Change theme
+select.addEventListener("change", function () {
+  const theme = this.value;
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+});
+</script>
+  </div>
+</html>
