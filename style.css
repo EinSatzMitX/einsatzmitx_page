@@ -1,27 +1,200 @@
 :root {
+  --background-image: url("images/galaxy.png");
+  --bg_h: #f9f5d7;
   --bg: #fbf1c7;
+  --bg_s: #f2e5bc;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+
+  --fg: #282828;
   --fg1: #3c3836;
-  --h1: #d65d0e;
-  --purple: #b16286;
-  --blue: #458588;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+
+  --red: #9d0006;
+  --green: #79740e;
+  --yellow: #b57614;
+  --blue: #076678;
+  --purple: #8f3f71;
+  --aqua: #427b58;
+  --orange: #af3a03;
+  --gray: #928374;
+
+  --red-dim: #cc2412;
+  --green-dim: #98971a;
+  --yellow-dim: #d79921;
+  --blue-dim: #458598;
+  --purple-dim: #b16286;
+  --aqua-dim: #689d6a;
+  --orange-dim: #d65d0e;
+  --gray-dim: #7c6f64;
 }
 
 /* Gruvbox (dark) */
 [data-theme="gruvbox-dark"] {
+  --bg_h: #1d2021;
   --bg: #282828;
+  --bg_s: #32302f;
+  --bg1: #3c3836;
+  --bg2: #504945;
+  --bg3: #665c54;
+  --bg4: #7c6f64;
+
+  --fg: #fbf1c7;
   --fg1: #ebdbb2;
-  --h1: #d65d0e;
-  /* ... */
+  --fg2: #d5c4a1;
+  --fg3: #bdae93;
+  --fg4: #a89984;
+
+  --red: #fb4934;
+  --green: #b8bb26;
+  --yellow: #fabd2f;
+  --blue: #83a598;
+  --purple: #d3869b;
+  --aqua: #8ec07c;
+  --gray: #928374;
+  --orange: #fe8019;
+
+  --red-dim: #cc2412;
+  --green-dim: #98971a;
+  --yellow-dim: #d79921;
+  --blue-dim: #458588;
+  --purple-dim: #b16286;
+  --aqua-dim: #689d6a;
+  --gray-dim: #a89984;
+  --orange-dim: #d65d0e;
 }
 
 /* Gruvbox (light) */
 [data-theme="gruvbox-light"] {
+  --bg_h: #f9f5d7;
   --bg: #fbf1c7;
+  --bg_s: #f2e5bc;
+  --bg1: #ebdbb2;
+  --bg2: #d5c4a1;
+  --bg3: #bdae93;
+  --bg4: #a89984;
+
+  --fg: #282828;
   --fg1: #3c3836;
-  --h1: #d65d0e;
-  --purple: #b16286;
-  --blue: #458588;
+  --fg2: #504945;
+  --fg3: #665c54;
+  --fg4: #7c6f64;
+
+  --red: #9d0006;
+  --green: #79740e;
+  --yellow: #b57614;
+  --blue: #076678;
+  --purple: #8f3f71;
+  --aqua: #427b58;
+  --orange: #af3a03;
+  --gray: #928374;
+
+  --red-dim: #cc2412;
+  --green-dim: #98971a;
+  --yellow-dim: #d79921;
+  --blue-dim: #458598;
+  --purple-dim: #b16286;
+  --aqua-dim: #689d6a;
+  --orange-dim: #d65d0e;
+  --gray-dim: #7c6f64;
 }
+
+/* Normal Colors */
+.red {
+  color: var(--red);
+}
+.green {
+  color: var(--green);
+}
+.yellow {
+  color: var(--yellow);
+}
+.blue {
+  color: var(--blue);
+}
+.purple {
+  color: var(--purple);
+}
+.aqua {
+  color: var(--aqua);
+}
+.gray {
+  color: var(--gray);
+}
+.orange {
+  color: var(--orange);
+}
+/* Dim Colors */
+
+.red-dim {
+  color: var(--red-dim);
+}
+.green-dim {
+  color: var(--green-dim);
+}
+.yellow-dim {
+  color: var(--yellow-dim);
+}
+.blue-dim {
+  color: var(--blue-dim);
+}
+.purple-dim {
+  color: var(--purple-dim);
+}
+.aqua-dim {
+  color: var(--aqua-dim);
+}
+.gray-dim {
+  color: var(--gray-dim);
+}
+.orange-dim {
+  color: var(--orange-dim);
+}
+/* Foreground Colors */
+
+.fg {
+  color: var(--fg);
+}
+.fg1 {
+  color: var(--fg1);
+}
+.fg2 {
+  color: var(--fg2);
+}
+.fg3 {
+  color: var(--fg3);
+}
+.fg4 {
+  color: var(--fg4);
+}
+/* Background Colors */
+
+.bg-hard {
+  color: var(--bg_h);
+}
+.bg {
+  color: var(--bg);
+}
+.bg-soft {
+  color: var(--bg_s);
+}
+.bg1 {
+  color: var(--bg1);
+}
+.bg2 {
+  color: var(--bg2);
+}
+.bg3 {
+  color: var(--bg3);
+}
+.bg4 {
+  color: var(--bg4);
+}
+
 @font-face {
   font-family: "JetBrainsMono Nerd";
   src: url("https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts/patched-fonts/JetBrainsMono/Regular/complete/JetBrainsMono%20Nerd%20Font%20Complete%20Regular.woff2")
@@ -33,19 +206,72 @@
 
 body {
   background-color: var(--bg);
+  background-image: var(--background-image);
   font-family: "JetBrainsMono Nerd", monospace;
   /* color: var(--fg1); */
 
   font-size: 100%;
-  /* background-image: url(/images/bg.png); */
 
   text-align: left;
+}
+
+#site-header {
+  background-color: var(--bg);
+  border: 3px solid;
+  border-color: var(--bg4);
+  padding: 20px 20px 20px 20px;
+  width: 90%;
+  height: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 20px;
+}
+
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+  user-select: none;
+}
+
+/* Press animation */
+.theme-btn:active {
+  transform: scale(0.85);
+}
+
+/* Optional hover effect */
+.theme-btn:hover {
+  opacity: 0.8;
+}
+
+.home-btn {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+  user-select: none;
+}
+
+/* Press animation */
+.home-btn:active {
+  transform: scale(0.85);
+}
+
+/* Optional hover effect */
+.home-btn:hover {
+  opacity: 0.8;
+  text-decoration: none;
 }
 
 #main {
   background-color: var(--bg);
   border: 3px solid;
-  border-color: darkgrey;
+  border-color: var(--bg4);
   color: var(--fg1);
   padding: 0px 20px 20px 20px;
   width: 60%;
@@ -55,12 +281,50 @@ body {
 }
 
 h1 {
-  color: var(--h1);
+  color: var(--red-dim);
+  text-decoration: underline;
   font-size: 300%;
 }
-a {
-  color: var(--blue);
+h2 {
+  color: var(--yellow-dim);
+  text-decoration: underline;
 }
+h3 {
+  color: var(--green-dim);
+  text-decoration: underline;
+}
+h4 {
+  color: var(--aqua-dim);
+  text-decoration: underline;
+}
+h5 {
+  color: var(--blue-dim);
+  text-decoration: underline;
+}
+h6 {
+  color: var(--purple-dim);
+  text-decoration: underline;
+}
+a:link {
+  color: var(--blue-dim);
+  background-color: transparent;
+  text-decoration: none;
+}
+
 a:visited {
   color: var(--purple);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--red);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: va(--yellow);
+  background-color: transparent;
+  text-decoration: underline;
 }
