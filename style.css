@@ -208,11 +208,36 @@ body {
   background-color: var(--bg);
   background-image: var(--background-image);
   font-family: "JetBrainsMono Nerd", monospace;
-  /* color: var(--fg1); */
+  background-size: cover;
+
+  /* the background image will be pixel art */
+  image-rendering: pixelated;
 
   font-size: 100%;
 
   text-align: left;
+}
+
+aside {
+  margin-left: 5%;
+  margin-right: 5%;
+  background-color: var(--bg);
+  text-align: center;
+  font-family: "JetBrainsMono Nerd", monospace;
+  border: 3px solid;
+  border-color: var(--bg4);
+  color: var(--fg1);
+  padding: min(20px, 5%), min(20px, 5%), min(20px, 5%), min(20px, 5%);
+  width: 12.5%;
+  height: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px; /* space between buttons */
+}
+
+aside h3 {
+  grid-column: span 2;
 }
 
 #site-header {
@@ -268,13 +293,23 @@ body {
   text-decoration: none;
 }
 
+.cnctn-btn {
+  width: 64px;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+  user-select: none;
+  height: 64px;
+}
+
 #main {
   background-color: var(--bg);
   border: 3px solid;
   border-color: var(--bg4);
   color: var(--fg1);
   padding: 0px 20px 20px 20px;
-  width: 60%;
+  /* width: 60%; */
   height: auto;
   margin-left: 20%;
   margin-right: 20%;

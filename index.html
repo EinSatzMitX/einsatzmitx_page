@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US" data-theme="gruvbox-dark">
+  <head>
+    <title>EinSatzMitX - Main Page</title> 
+    <link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
+  </head>
+
+
   <header id="site-header" role="banner" aria-label="Main header">
     <div class="container">
       <a class="brand" href="index.html">
@@ -13,42 +19,60 @@
     </div>
   </header>
 
+
+
+  <aside style="float:left;">
+    <h3>Connections</h3>
+    <a href="https://steamcommunity.com/profiles/76561199470157171">
+      <img src="images/steam.png" alt="Steam" class="cnctn-btn">
+    </a>
+    <a href="https://github.com/EinSatzMitX">
+      <img src="images/github.png" alt="Github" class="cnctn-btn">
+    </a>
+    <a href="https://youtube.com/@EinSatzMitX">
+      <img src="images/youtube.png" alt="YouTube" class="cnctn-btn">
+    </a>
+    <a href="https://open.spotify.com/user/31epl346w4mzd75qhrq3ab7vy7aa">
+      <img src="images/spotify.png" alt="Spotify" class="cnctn-btn">
+    </a>
+  </aside>
+
+  <aside style="float:right;">
+    <h2>lol<br>lol <br>lol <br> lol <br></h2>
+  </aside>
+
   <body>
     <link rel="stylesheet" href="style.css">
     <div id="main">
-   <h1><b><u><strong>MY WEBBSITE!!1!</strong></u></b></h1>
-    <h2 id="about_me">About me</h2>
-    <p>My name is Bobo and I'm <span id="age" style="color: var(--purple);"></span> years old.</p>
 
-    <h2>Thins I likge</h2>
-    <p>
-    <ul>
-    <li>Video Games</li>
-    <li>Maths</li>
-    <li>Low-level Programming</li>
-    <li>Music (Favorite band is Metallica right now)</li>
-    </ul>
-    </p>
 
-    <h1>1</h1>
-    <h2>2</h2>
+      <h1><b><u><strong>MY WEBBSITE!!1!</strong></u></b></h1>
+      <h2 id="about_me">About me</h2>
+      <p>My name is Bobo and I'm <abbr title="19.09.2008"><span id="age" style="color: var(--purple);"></span></abbr> years old.</p>
+
+      <h2>Thins I likge</h2>
+      <p>
+      <ul>
+        <li>Video Games</li>
+        <li>Maths</li>
+        <li>Low-level Programming</li>
+        <li>Music (Favorite band is Metallica right now)</li>
+      </ul>
+      </p>
+
+      <h1>1</h1>
+      <h2>2</h2>
       <h3>3</h3>
       <h4>4</h4>
       <h5>5</h5>
       <h6></h6>
 
-    <p>
-      <a href="games.html">redirect</a>
-    </p>
-
-<!-- A small theme switcher with script to quickly swap between light/dark mode -->
-<!--   <select id="theme-select"> -->
-<!--   <option value="gruvbox-light">Grubox Light</option> -->
-<!--   <option value="gruvbox-dark">Grruvox Dark</option> -->
-<!-- </select> -->
+      <p>
+        <a href="games.html">redirect</a>
+      </p>
 
 <!-- This script automatically calculates my age based on the current date -->
-<script>
+      <script>
 const birth = new Date("2008-09-19");
 const now = new Date();
 
@@ -58,11 +82,11 @@ const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
 const age = (now - birth) / msPerYear;
 
 document.getElementById("age").textContent = age.toFixed(2);
-</script>
+      </script>
 
-
+<!-- ---------------------------- -->
 <!-- This script helps transition the page between light/dark mode -->
-<script>
+      <script>
 const toggle = document.getElementById("theme-toggle");
 
 // Load saved theme
@@ -87,8 +111,9 @@ function updateIcon(theme) {
     toggle.src = "images/sun.png";
   }
 }
-</script>
+      </script>
 
-  </div>
-    </body>
+    </div>
+  </body>
+
 </html>
