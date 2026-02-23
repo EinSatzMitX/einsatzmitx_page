@@ -70,6 +70,7 @@
 
 /* Gruvbox (light) */
 [data-theme="gruvbox-light"] {
+  --background-image: url("images/paper.png");
   --bg_h: #f9f5d7;
   --bg: #fbf1c7;
   --bg_s: #f2e5bc;
@@ -222,6 +223,7 @@ aside {
   margin-left: 5%;
   margin-right: 5%;
   background-color: var(--bg);
+  opacity: 0.9;
   text-align: center;
   font-family: "JetBrainsMono Nerd", monospace;
   border: 3px solid;
@@ -234,10 +236,42 @@ aside {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px; /* space between buttons */
+
+  border-radius: 8px;
 }
 
 aside h3 {
   grid-column: span 2;
+}
+
+footer {
+  background: var(--bg);
+  opacity: 0.9;
+  color: var(--fg1);
+
+  border: 3px solid;
+  border-color: var(--bg4);
+
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 20px 10px 20px;
+
+  border-radius: 8px;
+}
+
+.gif-grid {
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-flow: column;
+  gap: 15px;
+  justify-content: center;
+}
+.gif-grid img {
+  width: 60px;
+  height: 30px;
+  object-fit: stretch;
 }
 
 #site-header {
@@ -250,6 +284,8 @@ aside h3 {
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 20px;
+  opacity: 0.9;
+  border-radius: 8px;
 }
 
 .theme-btn {
@@ -272,27 +308,6 @@ aside h3 {
   opacity: 0.8;
 }
 
-.home-btn {
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  transition:
-    transform 0.15s ease,
-    opacity 0.2s ease;
-  user-select: none;
-}
-
-/* Press animation */
-.home-btn:active {
-  transform: scale(0.85);
-}
-
-/* Optional hover effect */
-.home-btn:hover {
-  opacity: 0.8;
-  text-decoration: none;
-}
-
 .cnctn-btn {
   width: 64px;
   cursor: pointer;
@@ -301,6 +316,19 @@ aside h3 {
     opacity 0.2s ease;
   user-select: none;
   height: 64px;
+}
+
+.game-container {
+  background-color: var(--bg);
+  border: 3px solid;
+  border-color: var(--bg4);
+  color: var(--fg1);
+  padding: 0px 20px 20px 20px;
+  height: auto;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-family: "JetBrainsMono Nerd", monospace;
 }
 
 #main {
@@ -313,6 +341,14 @@ aside h3 {
   height: auto;
   margin-left: 20%;
   margin-right: 20%;
+
+  overflow: auto;
+
+  width: auto;
+  height: 1500px;
+  opacity: 95%;
+
+  border-radius: 8px;
 }
 
 h1 {
@@ -324,6 +360,7 @@ h2 {
   color: var(--yellow-dim);
   text-decoration: underline;
 }
+
 h3 {
   color: var(--green-dim);
   text-decoration: underline;

@@ -1,8 +1,60 @@
 <!DOCTYPE html>
 <html lang="en-US" data-theme="gruvbox-light">
-<body>
- 
-   <link rel="stylesheet" href="style.css">
+  <head>
+    <title>EinSatzMitX - Video Games</title> 
+    <link rel="icon" type="image/x-icon" href="images/steam.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-</body>
+
+  <header id="site-header">
+    <div class="container">    
+      <!-- Home link -->
+      <a href="index.html">
+        <img id="home-button"
+          src="images/einsatzmitx.png"
+          alt="Home"
+          class="theme-btn">
+      </a>  
+      <!-- Theme toggle (NOT inside anchor) -->
+      <img id="theme-toggle"
+        src="images/sun.png"
+        alt="Toggle theme"
+        class="theme-btn">  
+    </div>
+  </header>
+
+  <body>
+    <div class="game-container">
+      <h1><b><u><strong>Hollow Knight</strong></u></b></h1>
+    </div>
+  </body>
 </html>
+
+
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme") || "gruvbox-light";
+document.documentElement.setAttribute("data-theme", savedTheme);
+updateIcon(savedTheme);
+
+toggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "gruvbox-dark" ? "gruvbox-light" : "gruvbox-dark";
+
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+
+  updateIcon(next);
+});
+
+function updateIcon(theme) {
+  if (theme === "gruvbox-dark") {
+    toggle.src = "images/moon.png";
+  } else {
+    toggle.src = "images/sun.png";
+  }
+}
+</script>

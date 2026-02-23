@@ -3,23 +3,25 @@
   <head>
     <title>EinSatzMitX - Main Page</title> 
     <link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
+    <link rel="stylesheet" href="style.css">
   </head>
 
-
-  <header id="site-header" role="banner" aria-label="Main header">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img id= "home-buttton" src="images/einsatzmitx.png" alt="Home" class="home-btn" href="index.html">
-        <img id= "theme-toggle" src="images/sun.png" alt="Toggle theme" class="theme-btn">
-      </a>
-      <!-- <nav class ="nav"> -->
-      <!--   <a href="/about">About</a> -->
-      <!--   <a href="/notes">Notes</a> -->
-      <!-- </nav> -->
+  <header id="site-header" role="banner">
+    <div class="container">    
+      <!-- Home link -->
+      <a href="index.html">
+        <img id="home-button"
+          src="images/einsatzmitx.png"
+          alt="Home"
+          class="theme-btn">
+      </a>  
+      <!-- Theme toggle (NOT inside anchor) -->
+      <img id="theme-toggle"
+        src="images/sun.png"
+        alt="Toggle theme"
+        class="theme-btn">  
     </div>
   </header>
-
-
 
   <aside style="float:left;">
     <h3>Connections</h3>
@@ -38,22 +40,22 @@
   </aside>
 
   <aside style="float:right;">
-    <h2>lol<br>lol <br>lol <br> lol <br></h2>
+    <h3>lol<br>lol <br>lol <br> lol <br></h3>
   </aside>
 
   <body>
-    <link rel="stylesheet" href="style.css">
     <div id="main">
-
-
-      <h1><b><u><strong>MY WEBBSITE!!1!</strong></u></b></h1>
+      <h1><b><u><strong>MY WEBSITE</strong></u></b></h1>
       <h2 id="about_me">About me</h2>
-      <p>My name is Bobo and I'm <abbr title="19.09.2008"><span id="age" style="color: var(--purple);"></span></abbr> years old.</p>
+      <p>My actual name is Peter but online I'm Bobo or EinSatzMitX.
+        <!-- <br> -->
+        I'm <abbr title="19.09.2008"><span id="age" style="color: var(--purple);"></span></abbr> years old.
+      </p>
 
-      <h2>Thins I likge</h2>
+      <h2>Things I like</h2>
       <p>
       <ul>
-        <li>Video Games</li>
+        <li><a href="games.html">Video Games</a></li>
         <li>Maths</li>
         <li>Low-level Programming</li>
         <li>Music (Favorite band is Metallica right now)</li>
@@ -65,14 +67,30 @@
       <h3>3</h3>
       <h4>4</h4>
       <h5>5</h5>
-      <h6></h6>
+      <h6>6</h6>
 
       <p>
         <a href="games.html">redirect</a>
       </p>
 
+    </div>     
+  </body>
+
+  <footer>
+    <div class = "gif-grid">
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+    </div>
+    <p style="text-align:center;">(c) 2026 EinSatzMitX. All Rights Reserved.</p>
+  </footer>
+
+</html>
 <!-- This script automatically calculates my age based on the current date -->
-      <script>
+<script>
 const birth = new Date("2008-09-19");
 const now = new Date();
 
@@ -82,11 +100,11 @@ const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
 const age = (now - birth) / msPerYear;
 
 document.getElementById("age").textContent = age.toFixed(2);
-      </script>
+</script>
 
 <!-- ---------------------------- -->
 <!-- This script helps transition the page between light/dark mode -->
-      <script>
+<script>
 const toggle = document.getElementById("theme-toggle");
 
 // Load saved theme
@@ -111,9 +129,4 @@ function updateIcon(theme) {
     toggle.src = "images/sun.png";
   }
 }
-      </script>
-
-    </div>
-  </body>
-
-</html>
+</script>
