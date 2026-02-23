@@ -329,6 +329,8 @@ footer {
   margin-left: 10%;
   margin-right: 10%;
   font-family: "JetBrainsMono Nerd", monospace;
+  opacity: 0.95;
+  border-radius: 8px;
 }
 
 #main {
