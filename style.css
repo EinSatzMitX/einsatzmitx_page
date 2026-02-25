@@ -517,3 +517,21 @@ a:active {
   color: var(--fg);
   background-color: var(--bg);
 }
+
+.multi-column-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px; /* space between columns */
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto; /* center the whole grid */
+}
+
+.column-box {
+  background-color: var(--bg);
+  border: 3px solid var(--bg4);
+  border-radius: 8px;
+  padding: 8px;
+  /* text-align: left; */
+  color: var(--fg1);
+}

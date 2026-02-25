@@ -1,0 +1,92 @@
+<!DOCTYPE html5>
+<html lang="en-US" data-theme="gruvbox-dark">
+  <head>
+    <title>EinSatzMitX - Main Page</title> 
+    <link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+    <a href="main_page.html">
+      <img id="home-button" src="images/einsatzmitx.png" alt="Home" class="theme-btn">
+    </a>
+    <img id="theme-toggle" src="images/sun.png" alt="Toggle theme" class="theme-btn">
+    <a href="games.html#hk"><img src="images/hollow_knight_sitting.gif" class="hk-sit" alt="Hollow Knight sitting"></a>
+  </div>
+</header>
+
+
+
+    <div class="multi-column-layout">
+      <div class="column-box">
+        <h2 style="text-align:center;">Metal albums</h2>
+        <ul>
+          <li><abbr title="Tool">10,000 Days</abbr></li>
+          <li><abbr title="Tool">Ænima</abbr></li>
+          <li><abbr title="Muse">Absolution</abbr></li>
+          <li><abbr title="Deftones">Adrenaline</abbr></li>
+          <li><abbr title="Metallica">...And Justice For All</abbr></li>
+          <li><abbr title="Fear Factory">Archetype</abbr></li>
+          <li><abbr title="Deftones">Around The Fur</abbr></li>
+          <li><abbr title="Killswitch Engage">As Daylight Dies</abbr></li>
+          <li><abbr title="Metallica">Black Album</abbr></li>
+          <li><abbr title="Deftones">Diamond Eyes</abbr></li>
+          <li><abbr title="Tool">Fear Inoculum</abbr></li>
+          <li><abbr title="Metallica">Kill 'Em All</abbr></li>
+          <li><abbr title="Deftones">Koi No Yokan</abbr></li>
+          <li><abbr title="Tool">Lateralus</abbr></li>
+          <li><abbr title="Crowbar">Lifesblood For The Downtrodden</abbr></li>
+          <li><abbr title="Metallica">Master of Puppets</abbr></li>
+          <li><abbr title="Deftones">Ohms</abbr></li>
+          <li><abbr title="Deftones">Private Music</abbr></li>
+          <li><abbr title="Slayer">Reign In Blood</abbr></li>
+          <li><abbr title="Slayer">Repentless</abbr></li>
+          <li><abbr title="Metallica">Ride The Lightning</abbr></li>
+          <li><abbr title="Deftones">Saturday Night Wrist</abbr></li>
+          <li><abbr title="Slayer">Seasons In The Abyss</abbr></li>
+          <li><abbr title="Crowbar">Sonic Excess In Its Purest Form</abbr></li>
+          <li><abbr title="Crowbar">The Serpent Only Lies</abbr></li>
+          <li><abbr title="System Of A Down">Toxicity</abbr></li>
+          <li><abbr title="Tool">Underthrow</abbr></li>
+          <li><abbr title="Deftones">White Pony</abbr></li>
+        </ul>
+      </div>
+      <div class="column-box">Column 2 content</div>
+      <div class="column-box">Column 3 content</div>
+      <div class="column-box">Column 4 content</div>
+      <div class="column-box">Column 5 content</div>
+    </div>
+
+
+  </body>
+</html>
+<!-- ---------------------------- -->
+<!-- This script helps transition the page between light/dark mode -->
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme") || "gruvbox-light";
+document.documentElement.setAttribute("data-theme", savedTheme);
+updateIcon(savedTheme);
+
+toggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "gruvbox-dark" ? "gruvbox-light" : "gruvbox-dark";
+
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+
+  updateIcon(next);
+});
+
+function updateIcon(theme) {
+  if (theme === "gruvbox-dark") {
+    toggle.src = "images/moon.png";
+  } else {
+    toggle.src = "images/sun.png";
+  }
+}
+</script>
