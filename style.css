@@ -340,6 +340,7 @@ footer {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
+  margin-bottom: 20px;
   font-family: "JetBrainsMono Nerd", monospace;
   opacity: 0.95;
   border-radius: 8px;
@@ -413,4 +414,53 @@ a:active {
   color: va(--yellow);
   background-color: transparent;
   text-decoration: underline;
+}
+
+.masonry {
+  column-count: 4; /* adjust for desktop */
+  column-gap: 16px;
+}
+@media (max-width: 1100px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+@media (max-width: 700px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+@media (max-width: 420px) {
+  .masonry {
+    column-count: 1;
+  }
+}
+
+.card {
+  border: 2px solid;
+  border-color: var(--fg4);
+  break-inside: avoid;
+  margin-bottom: 16px;
+  background: var(--bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(20, 20, 50, 0.06);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(20, 20, 50, 0.09);
+}
+.meta {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--fg);
+  background-color: var(--bg);
 }
