@@ -344,6 +344,8 @@ footer {
   width: 95%;
   max-width: 1600px;
   margin: 0 auto 20px auto;
+
+  position: relative;
 }
 
 .site-header,
@@ -353,15 +355,35 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
-
-.hk-sit {
+/* position the clickable anchor at the bottom-right of the header */
+.hk-link {
   position: absolute;
-  bottom: -10px; /* overlap border slightly */
-  left: 30%;
-  transform: translateX(-50%);
+  left: 50%;
 
-  height: 60px; /* adjust size */
-  pointer-events: none; /* so it doesn’t block clicks */
+  transform: translateX(-50%);
+  bottom: -10px; /* vertical offset from bottom of header (tweak as needed) */
+  display: block;
+  width: 60px; /* control size of the anchor */
+  height: auto;
+  text-decoration: none; /* optional */
+}
+
+/* let the image fill the anchor - no absolute positioning here */
+.hk-sit {
+  display: block;
+  width: 100%;
+  height: auto; /* preserves aspect ratio */
+  pointer-events: none; /* optional: if you want clicks to land on the anchor rather than the image */
+  outline: none; /* remove debug outline when done */
+}
+
+/* responsive tweak: smaller on small screens */
+@media (max-width: 600px) {
+  .hk-link {
+    width: 56px;
+    right: 12px;
+    bottom: 4px;
+  }
 }
 
 .theme-btn {
