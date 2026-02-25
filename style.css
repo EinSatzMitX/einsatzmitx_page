@@ -286,6 +286,18 @@ footer {
   margin-bottom: 20px;
   opacity: 0.9;
   border-radius: 8px;
+
+  position: relative;
+}
+
+.hk-sit {
+  position: absolute;
+  bottom: -10px; /* overlap border slightly */
+  left: 30%;
+  transform: translateX(-50%);
+
+  height: 60px; /* adjust size */
+  pointer-events: none; /* so it doesn’t block clicks */
 }
 
 .theme-btn {
