@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --background-image: url("images/galaxy.png");
   --bg_h: #f9f5d7;
@@ -218,29 +224,83 @@ body {
 
   text-align: left;
 }
-
-aside {
-  margin-left: 5%;
-  margin-right: 5%;
-  background-color: var(--bg);
-  opacity: 0.9;
-  text-align: center;
-  font-family: "JetBrainsMono Nerd", monospace;
-  border: 3px solid;
-  border-color: var(--bg4);
-  color: var(--fg1);
-  padding: min(20px, 5%), min(20px, 5%), min(20px, 5%), min(20px, 5%);
-  width: 12.5%;
-  height: auto;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px; /* space between buttons */
-
-  border-radius: 8px;
+/* ---------- Header & grid share the same centered container ---------- */
+.site-header,
+.layout {
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
-aside h3 {
+.site-header {
+  position: relative;
+  background-color: var(--bg);
+  border: 3px solid var(--bg4);
+  padding: 20px;
+  opacity: 0.95;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  color: var(--fg1);
+}
+
+/* ---------- page grid (left - main - right) ---------- */
+.layout {
+  display: grid;
+  /* left / main / right */
+  grid-template-columns:
+    clamp(140px, 12vw, 260px)
+    minmax(600px, 1fr)
+    clamp(140px, 12vw, 260px);
+  gap: 16px;
+  align-items: start;
+}
+
+/* ---------- columns stack their child asides ---------- */
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---------- box/shared aside styling ---------- */
+.box,
+aside {
+  /* IMPORTANT: don't offset with margins here */
+  width: 100%; /* fill the column */
+  background-color: var(--bg);
+  border: 3px solid var(--bg4);
+  border-radius: 8px;
+  padding: min(18px, 4%);
+  color: var(--fg1);
+  text-align: center;
+  opacity: 0.95;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr; /* stack everything vertically */
+  }
+  .left-column,
+  .right-column {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .box,
+  aside {
+    width: clamp(140px, 45%, 320px);
+  } /* allow two per row on narrow screens */
+}
+
+/* example: keep social grid inside box */
+.social_aside {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.social_aside h3 {
   grid-column: span 2;
 }
 
@@ -274,20 +334,24 @@ footer {
   object-fit: stretch;
 }
 
-#site-header {
+.site-header {
   background-color: var(--bg);
-  border: 3px solid;
-  border-color: var(--bg4);
-  padding: 20px 20px 20px 20px;
-  width: 90%;
-  height: auto;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 20px;
+  border: 3px solid var(--bg4);
+  padding: 20px;
   opacity: 0.9;
   border-radius: 8px;
 
-  position: relative;
+  width: 95%;
+  max-width: 1600px;
+  margin: 0 auto 20px auto;
+}
+
+.site-header,
+.layout {
+  width: 95%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hk-sit {
@@ -301,8 +365,8 @@ footer {
 }
 
 .theme-btn {
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  max-width: 64px;
   cursor: pointer;
   transition:
     transform 0.15s ease,
@@ -321,13 +385,13 @@ footer {
 }
 
 .cnctn-btn {
-  width: 64px;
-  cursor: pointer;
-  transition:
-    transform 0.15s ease,
-    opacity 0.2s ease;
+  width: 100%;
+  max-width: 64px;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  object-fit: contain;
   user-select: none;
-  height: 64px;
+  cursor: pointer;
 }
 
 .game-container {
@@ -346,24 +410,13 @@ footer {
   border-radius: 8px;
 }
 
-#main {
+.main {
+  width: 100%; /* fill grid column */
   background-color: var(--bg);
-  border: 3px solid;
-  border-color: var(--bg4);
-  color: var(--fg1);
-  padding: 0px 20px 20px 20px;
-  /* width: 60%; */
-  height: auto;
-  margin-left: 20%;
-  margin-right: 20%;
-
-  overflow: auto;
-
-  width: auto;
-  height: 1500px;
-  opacity: 95%;
-
+  border: 3px solid var(--bg4);
+  padding: 18px;
   border-radius: 8px;
+  color: var(--fg1);
 }
 
 h1 {

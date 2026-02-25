@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="gruvbox-dark">
+  <head>
+    <title>EinSatzMitX - Main Page</title> 
+    <link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+    <a href="main_page.html">
+      <img id="home-button" src="images/einsatzmitx.png" alt="Home" class="theme-btn">
+    </a>
+    <img id="theme-toggle" src="images/sun.png" alt="Toggle theme" class="theme-btn">
+    <img src="images/hollow_knight_sitting.gif" class="hk-sit" alt="Hollow Knight sitting">
+  </div>
+</header>
+
+  <div class="layout">
+    <div class="left-column">
+      <div class="box social_aside" >
+        <h3>Connections</h3>
+        <a href="https://steamcommunity.com/profiles/76561199470157171">
+          <img src="images/steam.png" alt="Steam" class="cnctn-btn">
+        </a>
+        <a href="https://github.com/EinSatzMitX">
+          <img src="images/github.png" alt="Github" class="cnctn-btn">
+        </a>
+        <a href="https://youtube.com/@EinSatzMitX">
+          <img src="images/youtube.png" alt="YouTube" class="cnctn-btn">
+        </a>
+        <a href="https://Gopen.spotify.com/user/31epl346w4mzd75qhrq3ab7vy7aa">
+          <img src="images/spotify.png" alt="Spotify" class="cnctn-btn">
+        </a>
+        <a href="https://www.reddit.com/user/EinSatzMitX/">
+          <img src="images/reddit.png" alt="Reddit" class="cnctn-btn">
+        </a>
+        <a href="https://discord.com/users/1017434146475348041">
+          <img src="images/discord.png" alt="Discord" class="cnctn-btn">
+        </a> 
+      </div>   
+
+      <aside class="box">
+        <h3>Features</h3>
+        <a href="games.html"><h4 style="text-align:center;">Favorite Games</h4></a>
+      </aside>
+    </div>
+
+
+    <div class="main" id="main">
+      <h1><b><u><strong>MY WEBSITE</strong></u></b></h1>
+      <h2 id="about_me">About me</h2>
+      <p>My actual name is Peter but online I'm Bobo or EinSatzMitX.
+        <!-- <br> -->
+        I'm <abbr title="19.09.2008"><span id="age" style="color: var(--purple);"></span></abbr> years old.
+      </p>
+
+      <h3>Things I like</h3>
+      <p>
+      <ul>
+        <li><a href="games.html">Video Games</a></li>
+        <li>Maths</li>
+        <li>Low-level Programming</li>
+        <li>Music (Favorite band is Metallica right now)</li>
+      </ul>
+      </p>
+
+      <h1>1</h1>
+      <h2>2</h2>
+      <h3>3</h3>
+      <h4>4</h4>
+      <h5>5</h5>
+      <h6>6</h6>
+
+      <p>
+        <a href="games.html">redirect</a>
+      </p>
+
+
+    </div>     
+    <div class="right-column">
+      
+   <aside class="box"style="float:right; text-align:center;">
+    <h3>Features</h3>
+    <a href="games.html"><h4 style="text-align:center;">Favorite Games</h4></a>
+    <!-- <iframe width="180" height="180" style="border:none/*  */;" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe> -->
+  </aside>   </div>
+  </div>
+
+  <footer>
+    <div class = "gif-grid">
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://dimden.dev/"><img src="https://dimden.dev/services/images/88x31.gif"></a>  
+      <a href="https://loominggrey.neocities.org" target="_blank"><img src="https://file.garden/aX2GyiOMiUpCAxsu/download%20(1).png" alt="Loominggrey"></a>
+    </div>
+    <p style="text-align:center;">(c) 2026 EinSatzMitX. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+<!-- This script automatically calculates my age based on the current date -->
+<script>
+const birth = new Date("2008-09-19");
+const now = new Date();
+
+// milliseconds in one year (accounting for leap years)
+const msPerYear = 365.2425 * 24 * 60 * 60 * 1000;
+
+const age = (now - birth) / msPerYear;
+
+document.getElementById("age").textContent = age.toFixed(2);
+</script>
+
+<!-- ---------------------------- -->
+<!-- This script helps transition the page between light/dark mode -->
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme") || "gruvbox-light";
+document.documentElement.setAttribute("data-theme", savedTheme);
+updateIcon(savedTheme);
+
+toggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "gruvbox-dark" ? "gruvbox-light" : "gruvbox-dark";
+
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+
+  updateIcon(next);
+});
+
+function updateIcon(theme) {
+  if (theme === "gruvbox-dark") {
+    toggle.src = "images/moon.png";
+  } else {
+    toggle.src = "images/sun.png";
+  }
+}
+</script>
