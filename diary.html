@@ -1,0 +1,174 @@
+<!DOCTYPE html5>
+<html lang="en-US" data-theme="gruvbox-dark">
+  <head>
+    <title>EinSatzMitX - Main Page</title> 
+    <link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+<header class="site-header" role="banner">
+  <div class="site-header-inner">
+    <a href="main_page.html">
+      <img id="home-button" src="images/einsatzmitx.png" alt="Home" class="theme-btn">
+    </a>
+    <img id="theme-toggle" src="images/sun.png" alt="Toggle theme" class="theme-btn">
+    <a class="hk-link" href="games.html#hk">
+          <img src="images/hollow_knight_sitting.gif" class="hk-sit" alt="Hollow Knight sitting">
+    </a>
+  </div>
+</header>
+<div class="diary-container" id="27-02-2026"
+     data-location="Eberstadt (Papa), Germany"
+     data-date="27 February 2026"
+     data-time="21:52">
+  <div class="info-box" role="note" aria-label="entry info">
+    <div class="info-row location"><span class="label">Location</span><span class="value"></span></div>
+    <div class="info-row date"><span class="label">Date</span><span class="value"></span></div>
+    <div class="info-row time"><span class="label">Time</span><span class="value"></span></div>
+    <div class="permalink">
+      <a href="#" class="entry-link"></a>
+    </div>
+  </div>
+
+    <h1><b><u><strong>Lighthouse (Longing)</strong></u></b></h1>
+
+      <p>
+        I just watched a youtube video on my computer about a 
+        <a href="https://youtu.be/mtfEtIs_4DQ?si=Sglo3x9e2gksrqEF">Fire Lookout</a> somewhere in the USA's Cascades.
+        The video felt somewhat special. Not only were the amazing videography and composition absolutely cinnematic,
+        they were emotionally moving. It awakened a long-lost emotion in me: longing.
+      </p>
+      <p>
+        This feeling, this longing for something. Something quiet. Something truly beautiful. Something unique but also
+        the longing for something new, maybe unknown. It doesn't have to be real.
+      </p>
+      <p>
+        I believe that every person has felt this feeling at some point. Whether it is a longing for a person, an 
+        object, a place, something abstract, perhaps just a thought. It doesn't matter at all. Everyone has felt it 
+        before. Right now, I long for another life. A calmer, slower life. A life, where I don't go to be at 23:30 and 
+        wake up at 5:50. A life where I get up at 7:00 after eight hours of sleep and take a walk in nature, or, on a 
+        rainy day, drink tea and look out the window while listening to a Radiohead record. (Of course, it could be any
+        other record, but I just listened to "All I Need" and I think it's such a beautiful song.)      
+      </p>
+      <p>
+        I also wonder if I'll ever live this dream, and when I do if I'll even still want to. Whether I'll live it with 
+        someone, or whether I'll be alone.
+      </p>
+      <p>
+        I wonder, where I will live it. Somewhere in the Cascades like the guy in the video? Or rather in a lighthouse 
+        somewhere in the (ant-)arctic region? Maybe in a remote village in rural Japan? I dont' know.
+      </p>
+      <p>
+        I wonder what I would do the entire day. Reaing books about mathematics, draw or sketch, make or write music, 
+        ..., maybe something more practical? Will I tell the person I love tell about this dream? 
+      </p>
+      <p>
+        I can feel the longing in my heart
+      </p>
+
+  <p>Main diary text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel dolor at arcu cursus convallis.</p>
+
+  <h2>Fanart</h2>
+  <div class="masonry">
+    <!-- your existing cards -->
+    <a target="_blank" href="https://de.pinterest.com/pin/691302611567377476/">
+      <div class="card">
+        <img loading="lazy" src="images/games/hollow_knight_greenpath.jpg" alt="Hollow_knight">
+        <div class="meta">Art by "ganyu ♡"</div>
+      </div>
+    </a>
+    <!-- ...other cards... -->
+  </div>
+</div>
+  </body>
+</html>
+<!-- ---------------------------- -->
+<!-- This script helps transition the page between light/dark mode -->
+<script>
+const toggle = document.getElementById("theme-toggle");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme") || "gruvbox-light";
+document.documentElement.setAttribute("data-theme", savedTheme);
+updateIcon(savedTheme);
+
+toggle.addEventListener("click", () => {
+  const current = document.documentElement.getAttribute("data-theme");
+  const next = current === "gruvbox-dark" ? "gruvbox-light" : "gruvbox-dark";
+
+  document.documentElement.setAttribute("data-theme", next);
+  localStorage.setItem("theme", next);
+
+  updateIcon(next);
+});
+
+function updateIcon(theme) {
+  if (theme === "gruvbox-dark") {
+    toggle.src = "images/moon.png";
+  } else {
+    toggle.src = "images/sun.png";
+  }
+}
+</script>
+<script>
+  (function(){
+    const containers = document.querySelectorAll('.diary-container');
+
+    containers.forEach(c => {
+      // values from data attributes (preferred)
+      const dLocation = c.dataset.location;
+      const dDate     = c.dataset.date;
+      const dTime     = c.dataset.time;
+
+      // fallback: use id as date if present
+      const fallbackDate = c.id || '';
+
+      const now = new Date();
+      // nice default time (HH:MM) if none provided
+      const defaultTime = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+
+      // find value spans (created in markup)
+      const locEl  = c.querySelector('.info-box .location .value');
+      const dateEl = c.querySelector('.info-box .date .value');
+      const timeEl = c.querySelector('.info-box .time .value');
+
+      if (locEl)  locEl.textContent  = dLocation ?? 'Unknown location';
+      if (dateEl) dateEl.textContent = dDate ?? fallbackDate ?? '';
+      if (timeEl) timeEl.textContent = dTime ?? defaultTime;
+    });
+  })();
+</script>
+<script>
+(function(){
+  const containers = document.querySelectorAll('.diary-container');
+
+  containers.forEach(c => {
+    const dLocation = c.dataset.location;
+    const dDate     = c.dataset.date;
+    const dTime     = c.dataset.time;
+
+    const fallbackDate = c.id || '';
+    const now = new Date();
+    const defaultTime = now.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'});
+
+    const locEl  = c.querySelector('.location .value');
+    const dateEl = c.querySelector('.date .value');
+    const timeEl = c.querySelector('.time .value');
+    const linkEl = c.querySelector('.entry-link');
+
+    if (locEl)  locEl.textContent  = dLocation ?? 'Unknown location';
+    if (dateEl) dateEl.textContent = dDate ?? fallbackDate;
+    if (timeEl) timeEl.textContent = dTime ?? defaultTime;
+
+    // 🔗 Generate permalink
+    if (linkEl && c.id) {
+      const baseUrl = window.location.origin + window.location.pathname;
+      const fullUrl = baseUrl + "#" + c.id;
+
+      linkEl.href = fullUrl;
+      linkEl.textContent = fullUrl;
+    }
+  });
+})();
+</script>

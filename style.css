@@ -231,6 +231,11 @@ body {
   max-width: 1600px;
   margin: 0 auto;
 }
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* spacing between icons */
+}
 
 .site-header {
   position: relative;
@@ -241,6 +246,9 @@ body {
   border-radius: 8px;
   margin-bottom: 20px;
   color: var(--fg1);
+}
+.site-header a {
+  text-decoration: none;
 }
 
 /* ---------- page grid (left - main - right) ---------- */
@@ -396,6 +404,10 @@ footer {
   user-select: none;
 }
 
+a img {
+  display: block; /* prevents inline baseline weirdness */
+}
+
 /* Press animation */
 .theme-btn:active {
   transform: scale(0.85);
@@ -404,6 +416,7 @@ footer {
 /* Optional hover effect */
 .theme-btn:hover {
   opacity: 0.8;
+  text-decoration: none;
 }
 
 .cnctn-btn {
@@ -430,6 +443,128 @@ footer {
   font-family: "JetBrainsMono Nerd", monospace;
   opacity: 0.95;
   border-radius: 8px;
+}
+
+.diary-container {
+  position: relative; /* important for absolute child (info box) */
+  background-color: var(--bg);
+  border: 3px solid var(--bg4);
+  color: var(--fg1);
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto 20px;
+  font-family: "JetBrainsMono Nerd", monospace;
+  opacity: 0.95;
+  border-radius: 8px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Info box top-right */
+.info-box {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 10px 12px;
+  border-radius: 8px;
+  min-width: 168px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 18px rgba(10, 14, 24, 0.45);
+  font-size: 13px;
+  color: var(--fg1);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 5;
+}
+
+/* each row inside info box */
+.info-box .info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: baseline;
+}
+
+/* label (left side) */
+.info-box .label {
+  font-weight: 600;
+  color: var(--fg4);
+  opacity: 0.9;
+  margin-right: 8px;
+  flex: 0 0 auto;
+}
+
+/* value (right side) */
+.info-box .value {
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* small visual accent (optional) */
+.info-box::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 10px;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(127, 195, 255, 0.02) inset;
+}
+
+/* Responsive: on small screens move info box inline above content */
+@media (max-width: 700px) {
+  .info-box {
+    position: static;
+    margin-bottom: 12px;
+    width: auto;
+    align-self: stretch;
+    flex-direction: row;
+    gap: 12px;
+    padding: 8px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  .info-box .info-row {
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 90px;
+  }
+  .diary-container {
+    padding-top: 16px;
+  }
+}
+
+.permalink {
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 11px;
+  word-break: break-all;
+}
+
+.permalink a {
+  color: var(--accent);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.permalink a:hover {
+  opacity: 1;
+  text-decoration: underline;
 }
 
 .main {
