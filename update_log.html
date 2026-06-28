@@ -18,74 +18,59 @@
     </a>
   </div>
 </header>
+
+
+
+
 <div class="diary-container" id="27-02-2026"
-     data-location="Eberstadt (Papa), Germany"
      data-date="27 February 2026"
-     data-time="21:52">
+     data-time="21:52"
+    version="0.1.0">
   <div class="info-box" role="note" aria-label="entry info">
-    <div class="info-row location"><span class="label">Location</span><span class="value"></span></div>
     <div class="info-row date"><span class="label">Date</span><span class="value"></span></div>
     <div class="info-row time"><span class="label">Time</span><span class="value"></span></div>
+    <div class="info-row version"><span class="label">Version</span><span class="value"></span></div>
     <div class="permalink">
       <a href="#" class="entry-link"></a>
     </div>
   </div>
 
-    <h1><b><u><strong>Lighthouse (Longing)</strong></u></b></h1>
+    <h1><b><u><strong>Update Log Update</strong></u></b></h1>
+      <p>This is the first update log of this website and I'm not gonna put too much effort in.</p>
+      <p>At this point, I already have a main, games, music and diary page and with this next release an update log page as well. There is a toggleable dark mode and even a clickable hollow knight sitting at the top of the page</p>
+      <p>I don't have great plans with this site and this is just a tiny side project, but I plan on adding stuff every now and then, whenever I feel like it.</p>
+      <p>I just want this place to feel like home.</p>
 
-      <p>
-        I just watched a youtube video on my computer about a 
-        <a href="https://youtu.be/mtfEtIs_4DQ?si=Sglo3x9e2gksrqEF">Fire Lookout</a> somewhere in the USA's Cascades.
-        The video felt somewhat special. Not only were the amazing videography and composition absolutely cinnematic,
-        they were emotionally moving. It awakened a long-lost emotion in me: longing.
-      </p>
-      <p>
-        This feeling, this longing for something. Something quiet. Something truly beautiful. Something unique but also
-        the longing for something new, maybe unknown. It doesn't have to be real.
-      </p>
-      <p>
-        I believe that every person has felt this feeling at some point. Whether it is a longing for a person, an 
-        object, a place, something abstract, perhaps just a thought. It doesn't matter at all. Everyone has felt it 
-        before. Right now, I long for another life. A calmer, slower life. A life, where I don't go to be at 23:30 and 
-        wake up at 5:50. A life where I get up at 7:00 after eight hours of sleep and take a walk in nature, or, on a 
-        rainy day, drink tea and look out the window while listening to a Radiohead record. (Of course, it could be any
-        other record, but I just listened to "All I Need" and I think it's such a beautiful song.)      
-      </p>
-      <p>
-        I also wonder if I'll ever live this dream, and when I do if I'll even still want to. Whether I'll live it with 
-        someone, or whether I'll be alone.
-      </p>
-      <p>
-        I wonder, where I will live it. Somewhere in the Cascades like the guy in the video? Or rather in a lighthouse 
-        somewhere in the (ant-)arctic region? Maybe in a remote village in rural Japan? I dont' know.
-      </p>
-      <p>
-        I wonder what I would do the entire day. Reaing books about mathematics, draw or sketch, make or write music, 
-        ..., maybe something more practical? Will I tell the person I love tell about this dream? 
-      </p>
-      <p>
-        I can feel the longing in my heart
-      </p>
+      <p>Also, I now have a button that you can use to link to my website.</p>
+      <p>Copy and paste this into your page (or, preferably, download the image and host it yourself to save my bandwidth):</p>
+
+<pre><code>&lt;a href="https://einsatzmitx.neocities.org"&gt;&lt;img src="https://einsatzmitx.neocities.org/images/button.png" alt="EinsatzMitX"&gt;&lt;/a&gt;</code></pre>
+
+      <p>Preview:</p>
+      <a href="https://einsatzmitx.neocities.org">
+        <img src="https://einsatzmitx.neocities.org/images/button.png" alt="EinsatzMitX">
+      </a>
 
 
-  <h2>Related Images</h2>
-  <div class="masonry">
-    <!-- your existing cards -->
-    <a target="_blank" >
-      <div class="card">
-        <img loading="lazy" src="images/diary/fire-lookout.webp" alt="Fire lookout">
-        <div class="meta">A fire lookut in Northern California</div>
-      </div>
-    </a>
-
-    <a target="_blank" >
-      <div class="card">
-        <img loading="lazy" src="images/diary/lighthouse.webp" alt="Lighthouse">
-        <div class="meta">A lonely lighthouse</div>
-      </div>
-    </a>   <!-- ...other cards... -->
-  </div>
+  <!-- <h2>Related Images</h2> -->
+  <!-- <div class="masonry"> -->
+  <!--   <!-- your existing cards --> 
+  <!--   <a target="_blank" > -->
+  <!--     <div class="card"> -->
+  <!--       <img loading="lazy" src="images/diary/fire-lookout.webp" alt="Fire lookout"> -->
+  <!--       <div class="meta">A fire lookut in Northern California</div> -->
+  <!--     </div> -->
+  <!--   </a> -->
+  <!---->
+  <!--   <a target="_blank" > -->
+  <!--     <div class="card"> -->
+  <!--       <img loading="lazy" src="images/diary/lighthouse.webp" alt="Lighthouse"> -->
+  <!--       <div class="meta">A lonely lighthouse</div> -->
+  <!--     </div> -->
+  <!--   </a>   <!-- ...other cards... --> 
+  <!-- </div> -->
 </div>
+ 
   </body>
 </html>
 <!-- ---------------------------- -->
@@ -125,6 +110,7 @@ function updateIcon(theme) {
       const dLocation = c.dataset.location;
       const dDate     = c.dataset.date;
       const dTime     = c.dataset.time;
+      const dVersion = c.dataset.version;
 
       // fallback: use id as date if present
       const fallbackDate = c.id || '';
@@ -139,6 +125,10 @@ function updateIcon(theme) {
       const timeEl = c.querySelector('.info-box .time .value');
       const versionEl = c.querySelector('.info-box .version .value');
 
+
+      if (versionEl) {
+         versionEl.textContent = dVersion ?? "v1.0";
+      }
       if (locEl)  locEl.textContent  = dLocation ?? 'Unknown location';
       if (dateEl) dateEl.textContent = dDate ?? fallbackDate ?? '';
       if (timeEl) timeEl.textContent = dTime ?? defaultTime;
