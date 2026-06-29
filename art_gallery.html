@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="gruvbox-light">
+	<head>
+		<title>EinSatzMitX - Video Games</title>
+		<link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<header class="site-header" role="banner">
+		<div class="site-header-inner">
+			<a href="main_page.html">
+				<img id="home-button" src="images/einsatzmitx.png" alt="Home" class="theme-btn">
+			</a>
+			<img id="theme-toggle" src="images/sun.png" alt="Toggle theme" class="theme-btn">
+			<a class="hk-link" href="games.html#hk">
+				<img src="images/hollow_knight_sitting.gif" class="hk-sit" alt="Hollow Knight sitting">
+			</a>
+		</div>
+	</header>
+
+	<body>
+		<div class="game-container" id="gwj93">
+			<h1><b><u><strong>Godot Wild Jam #93 (Bounty)</strong></u></b></h1>
+
+			<p>The following art was made by me for the game <a href="https://einsatzmitx.itch.io/meteor-mayhem">Meteor
+					Mayhem</a>
+				and submitted to the <a href="https://itch.io/jam/godot-wild-jam-93">93rd Weekly Godot Wild Jam</a>
+				with the theme "Bounty". I cooperated on this jam with <a href="https://itch.io/profile/futureless">Futureless</a>
+				, focusing solely on the pixel art. This was my first ever submitted game jam and even though it's not the best,
+				I'm proud of the art.</p>
+
+			<h2>Art Work</h2>
+			<div class="masonry">
+				<!-- mix of aspect ratios -->
+				<a target="_blank" href="images/art_gallery/gwj93/meteorite_falling.gif"><div class="card"><img loading="lazy" src="images/art_gallery/gwj93/meteorite_falling.gif" alt="Meteorite falling"><div class="meta">A falling meteorite</div></div></a>
+				<a target="_blank" href="images/art_gallery/gwj93/report.png"><div class="card"><img loading="lazy" src="images/art_gallery/gwj93/report.png" alt="Report card"><div class="meta">Report card you get at the end of each round</div></div></a>
+				<a target="_blank" href="images/art_gallery/gwj93/glowing_meteorite.gif"><div class="card"><img loading="lazy" src="images/art_gallery/gwj93/glowing_meteorite.gif" alt="Glowing Meteorite"><div class="meta">Collectable Glowing Meteorite</div></div></a>
+				<a target="_blank" href="images/art_gallery/gwj93/green_meteorite_shards.png"><div class="card"><img loading="lazy" src="images/art_gallery/gwj93/green_meteorite_shards.png" alt="Green Meteorite shards"><div class="meta">Shards of the green meteorite, that can be obtained by chiseling it open</div></div></a>
+				<!-- add more -->
+			</div>
+		</div>
+
+		<div class="game-container" id="misc">
+
+			<h1><b><u><strong>Misc Art</strong></u></b></h1>
+			<p>This is just a collection of miscellanious art I made for various purposes</p>
+			<h2>Art Work</h2>
+			<div class="masonry">
+				<!-- mix of aspect ratios -->
+				<a target="_blank" href="images/button.png"><div class="card"><img loading="lazy" src="images/button.png" alt="Site button"><div class="meta">Button to link my site to your own!</div></div></a>
+				<a target="_blank" href="images/einsatzmitx.png"><div class="card"><img loading="lazy" src="images/einsatzmitx.png" alt="EinSatzMitX"><div class="meta">My profile icon, Master Chief</div></div></a>
+				<a target="_blank" href="images/art_gallery/misc/rocks.png"><div class="card"><img loading="lazy" src="images/art_gallery/misc/rocks.png" alt="Rock studies"><div class="meta">Some Rock studies I made</div></div></a>
+				<a target="_blank" href="images/art_gallery/misc/hatsune_miku.png"><div class="card"><img loading="lazy" src="images/art_gallery/misc/hatsune_miku.png" alt="Hatsune Miku"><div class="meta">A drawing of Hatsune Miku, which I used as a pfp on a private discord for some time</div></div></a>
+				<!-- add more -->
+			</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	const toggle = document.getElementById("theme-toggle");
+	
+	// Load saved theme
+	const savedTheme = localStorage.getItem("theme") || "gruvbox-light";
+	document.documentElement.setAttribute("data-theme", savedTheme);
+	updateIcon(savedTheme);
+	
+	toggle.addEventListener("click", () => {
+		const current = document.documentElement.getAttribute("data-theme");
+		const next = current === "gruvbox-dark" ? "gruvbox-light" : "gruvbox-dark";
+		
+		document.documentElement.setAttribute("data-theme", next);
+		localStorage.setItem("theme", next);
+		
+		updateIcon(next);
+		});
+		
+		function updateIcon(theme) {
+			if (theme === "gruvbox-dark") {
+				toggle.src = "images/moon.png";
+				} else {
+					toggle.src = "images/sun.png";
+				}
+			}
+</script>
