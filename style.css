@@ -224,6 +224,7 @@ body {
 
   text-align: left;
 }
+
 /* ---------- Header & grid share the same centered container ---------- */
 .site-header,
 .layout {
@@ -691,4 +692,40 @@ a:active {
   padding: 8px;
   /* text-align: left; */
   color: var(--fg1);
+}
+
+#random-meme {
+  width: 100%;
+  border: 2px solid var(--bg3);
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+#meme-link:hover #random-meme {
+  border-color: var(--blue);
+  transform: scale(1.02);
+}
+
+.meme-btn {
+  background: var(--bg1);
+  color: var(--fg);
+  border: 2px solid var(--yellow);
+  padding: 6px 12px;
+  margin: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  transition: 0.15s ease;
+}
+
+.meme-btn:hover {
+  background: var(--yellow);
+  color: var(--bg0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.meme-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }

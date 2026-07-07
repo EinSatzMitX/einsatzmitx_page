@@ -97,6 +97,17 @@
 					<a href="art_gallery.html"><h4 style="text-align:center;">Art Gallery</h4></a>
 					<!-- <iframe width="180" height="180" style="border:none/*  */;" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe> -->
 				</aside>
+				<aside class="box" style="float:right; text-align:center;">
+					<h3>Random Meme</h3>
+
+					<a id="meme-link" href="" target="_blank">
+						<img id="random-meme" src="" alt="Random meme" style="max-width:100%; height:auto;">
+					</a>
+					<br><br>
+					<button class="meme-btn" id="prev-meme">◀ Prev</button>
+					<button class="meme-btn" id="new-meme">Random</button>
+					<button class="meme-btn" id="next-meme">Next ▶</button>
+				</aside>
 			</div>
 		</div>
 
@@ -151,4 +162,55 @@
 					toggle.src = "images/sun.png";
 				}
 			}
+</script>
+<script>
+	const memes = [
+	
+	"images/memes/cashier.png",
+	
+	"images/memes/cat_buffet.png",
+	
+	"images/memes/congratulations.png",
+	
+	"images/memes/cow.png",
+	
+	"images/memes/dog.jpg",
+	
+	"images/memes/meow_cat.png",
+	
+	"images/memes/puter_cat.png",
+	
+	];
+	
+	const memeImg = document.getElementById("random-meme");
+	const memeLink = document.getElementById("meme-link");
+	
+	let currentIndex = Math.floor(Math.random() * memes.length);
+	
+	function showMeme() {
+		memeImg.src = memes[currentIndex];
+		memeLink.href = memes[currentIndex];
+		
+	}
+	
+	function nextMeme() {
+		currentIndex = (currentIndex + 1) % memes.length;
+		showMeme();
+	}
+	
+	function prevMeme() {
+		currentIndex = (currentIndex - 1 + memes.length) % memes.length;
+		showMeme();
+	}
+	
+	function randomMeme() {
+		currentIndex = Math.floor(Math.random() * memes.length);
+		showMeme();
+	}
+	
+	showMeme();
+	
+	document.getElementById("new-meme").addEventListener("click", randomMeme);
+	document.getElementById("next-meme").addEventListener("click", nextMeme);
+	document.getElementById("prev-meme").addEventListener("click", prevMeme);
 </script>
