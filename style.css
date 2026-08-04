@@ -729,3 +729,15 @@ a:active {
   transform: translateY(0);
   box-shadow: none;
 }
+
+.album-viewer iframe {
+  display: block;
+  margin-bottom: 15px; /* Space between player and buttons */
+}
+
+.controls {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 10px; /* Space between buttons */
+  flex-wrap: wrap; /* Wrap on smaller screens */
+}

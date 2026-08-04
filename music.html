@@ -1,7 +1,7 @@
 <!DOCTYPE html5>
 <html lang="en-US" data-theme="gruvbox-dark">
 	<head>
-		<title>EinSatzMitX - Main Page</title>
+		<title>EinSatzMitX - Music Page</title>
 		<link rel="icon" type="image/x-icon" href="images/einsatzmitx.png">
 		<link rel="stylesheet" href="style.css">
 	</head>
@@ -18,10 +18,37 @@
 				</a>
 			</div>
 		</header>
+        <div class="game-container">
+        <h1><b><u><strong>My Music Taste</strong></u></b></h1>
+
+      <p>Some people would argue that I have an odd, rather nerdy taste in music. And they're not wrong! However, I do listen to "mainstream" music as well (e.g. my favorite band is Radiohead).</p>
+
+      <h2>Favorite Albums</h2>
+ <div class="album-viewer">
+  <iframe
+    id="spotify-player"
+    style="border-radius:12px"
+    width="100%"
+    height="352"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+
+  <div class="controls">
+    <button class="meme-btn" onclick="prevAlbum()">← Previous</button>
+    <button class="meme-btn" onclick="randomAlbum()">Random</button>
+    <button class="meme-btn" onclick="nextAlbum()">Next →</button>
+
+</div>     
+</div>     
+
+
+        </div>
 
 		<div class="multi-column-layout">
 			<div class="column-box">
-				<h2 style="text-align:center;">Metal albums</h2>
+				<h2 style="text-align:center;">Metal Albums</h2>
 				<ul>
 					<li><abbr title="Tool">10,000 Days</abbr></li>
 					<li><abbr title="Tool">Ænima</abbr></li>
@@ -64,7 +91,7 @@
 				</ul>
 			</div>
 			<div class="column-box">
-				<h2 style="text-align:center;">Rock Albums</h2>
+				<h2 style="text-align:center;">Misc Albums</h2>
 				<ul>
 					<li><abbr title="Radiohead">Amnesiac</abbr></li>
 					<li><abbr title="Pink Floyd">A Momentary Lapse Of Reason</abbr></li>
@@ -108,7 +135,7 @@
 				</ul>
 			</div>
 			<div class="column-box">
-				<h2 style="text-align:center;">Math Rock Albums</h2>
+				<h2 style="text-align:center;">Albums from Nerdy Genres I like</h2>
 
 				<ul>
 
@@ -116,18 +143,21 @@
 					<li><abbr title="American Football">American Football</abbr></li>
 					<li><abbr title="This Town Needs Guns">Animals</abbr></li>
 					<li><abbr title="JYOCHO">A Prayer In Vain</abbr></li>
+					<li><abbr title="Have A Nice Life">Deathconsciousness</abbr></li>
+					<li><abbr title="Panchiko">D&gt;E&gt;A&gt;T&gt;H&gt;M&gt;E&gt;T&gt;A&gt;L</abbr></li>
+					<li><abbr title="Sunny Day Real Estate">Diary (Remastered And Expanded Edition)</abbr></li>
 					<li><abbr title="Elephant Gym">Elephant Gym on Audiotree Live</abbr></li>
+					<li><abbr title="Panchiko">Failed at Math(s)</abbr></li>
 					<li><abbr title="toe">For Long Tomorrow</abbr></li>
+					<li><abbr title="Panchiko">Ginkgo</abbr></li>
+					<li><abbr title="Sunny Day Real Estate">How It Fels To Be Something On</abbr></li>
+					<li><abbr title="LSD And he Search For God">LSD And The Search For God</abbr></li>
 					<li><abbr title="Delta Sleep">Management</abbr></li>
+					<li><abbr title="Slowdive">Slowdive</abbr></li>
+					<li><abbr title="Slowdive">Souvlaki Space Station</abbr></li>
 					<li><abbr title="Delta Sleep">Twin Galaxies</abbr></li>
 					<li><abbr title="toe">the book about my idle plot on a vague anxiety</abbr></li>
 					<li><abbr title="The World Is A Beautiful Place & I Am No Longer Afraid To Die">Whenever, If ever</abbr></li>
-				</ul>
-			</div>
-			<div class="column-box">
-				<h2 style="text-align:center;">Pop Albums</h2>
-
-				<ul>
 					<li><abbr title="Tame Impala">Currents</abbr></li>
 					<li><abbr title="Djo">Decide</abbr></li>
 					<li><abbr title="Surf Curse">Freaks</abbr></li>
@@ -136,6 +166,7 @@
 					<li><abbr title="Tame Impala">Lonerism</abbr></li>
 					<li><abbr title="BoyWithUke">Lucid Dreams</abbr></li>
 					<li><abbr title="BoyWithUke">Serotonin Dreams</abbr></li>
+					<li><abbr title="Duster">Stratosphere</abbr></li>
 					<li><abbr title="Noah Floersch">The Kite</abbr></li>
 					<li><abbr title="Tame Impala">The Slow Rush</abbr></li>
 				</ul>
@@ -148,14 +179,67 @@
 					<li><abbr title="ptasinski">consider</abbr></li>
 					<li><abbr title="Young The Giant">Cough Syrup</abbr></li>
 					<li><abbr title="Kevin Walkman">I'm Not Crazy</abbr></li>
-					<li><abbr title="Duster">Inside Out</abbr></li>
-					<li><abbr title="Motörhead">In the Black</abbr></li>
+					<li><abbr title="Mot&ouml;rhead">In the Black</abbr></li>
+					<li><abbr title="Airiel">In your room</abbr></li>
+					<li><abbr title="Pinegrove">Need 2</abbr></li>
 					<li><abbr title="Kate Bush">Running Up That Hill (A Deal With God)</abbr></li>
+					<li><abbr title="You'll never get to Heaven">Setting Sun</abbr></li>
 					<li><abbr title="INOHA">Seventh Heaven</abbr></li>
 					<li><abbr title="Phantogram">When I'm Small</abbr></li>
-					<li><abbr title="Slowdive">When The Sun Hits</abbr></li>
 				</ul>
 			</div>
+			<div class="column-box">
+				<h2 style="text-align:center;">Artists I Like</h2>
+				<ul>
+					<li>American Football</li>
+					<li>Anthrax</li>
+					<li>Avenge Sevenfold</li>
+					<li>Carcass</li>
+					<li>Cocteau Twins</li>
+					<li>Coldplay</li>
+					<li>Crowbar</li>
+					<li>Daft Punk</li>
+					<li>Danzig</li>
+					<li>Deftones</li>
+					<li>Delta Sleep</li>
+					<li>Djo</li>
+					<li>Duster</li>
+					<li>Elephant Gym</li>
+					<li>Fear Factory</li>
+					<li>Foo Fighters</li>
+					<li>KORN</li>
+					<li>Linkin Park</li>
+					<li>Led Zeppelin</li>
+					<li>LSD And The Search For God</li>
+					<li>Mastodon</li>
+					<li>Metallica</li>
+					<li>Nirvana</li>
+					<li>NOFX</li>
+					<li>Panchiko</li>
+					<li>Pink Floyd</li>
+					<li>Radiohead</li>
+					<li>Rush</li>
+					<li>Schweisser</li>
+					<li>Slayer</li>
+					<li>Slowdive</li>
+					<li><abbr title="On Soundcloud and Youtube only">Sm&ouml;fte</abbr></li>
+					<li>Soundgarden</li>
+					<li>Sunny Day Real Estate</li>
+					<li>Supercar</li>
+					<li>Superheaven</li>
+					<li>System Of A Down</li>
+					<li>Tame Impala</li>
+					<li>The Backseat Lovers</li>
+					<li>The Beatles</li>
+					<li>The Misfits</li>
+					<li>Toby Fox</li>
+					<li>toe</li>
+					<li>TOOL</li>
+					<li><abbr title="This Town Needs Guns">TTNG</abbr></li>
+					<li>Tiny Moving Parts</li>
+				</ul>
+			</div>
+
 			<!-- <div class="column-box">Column 5 content</div> -->
 		</div>
 	</body>
@@ -187,4 +271,44 @@
 					toggle.src = "images/sun.png";
 				}
 			}
+</script>
+<script>
+const albums = [
+  "5vkqYmiPBYLaalcmjujWxK",
+  "6gl4ylXxmNMpOxBImNe9n3",
+  "6MH3CAXp8AN8ELrbex18dM",
+  "2Lq2qX3hYhiuPckC8Flj21",
+  "4i21O3uVh5palcfFhCjlT7",
+  "2S3289mypNw2zP0OpFexMb",
+  "1bcWJMGRvDhvKHNmQmTTCd"
+];
+
+let current = Math.floor(Math.random() * albums.length);
+
+function showAlbum() {
+  document.getElementById("spotify-player").src =
+    `https://open.spotify.com/embed/album/${albums[current]}`;
+}
+
+function nextAlbum() {
+  current = (current + 1) % albums.length;
+  showAlbum();
+}
+
+function prevAlbum() {
+  current = (current - 1 + albums.length) % albums.length;
+  showAlbum();
+}
+
+function randomAlbum() {
+  let next;
+  do {
+    next = Math.floor(Math.random() * albums.length);
+  } while (next === current && albums.length > 1);
+
+  current = next;
+  showAlbum();
+}
+
+showAlbum();
 </script>
