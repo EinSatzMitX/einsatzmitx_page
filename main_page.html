@@ -175,26 +175,21 @@
 </script>
 <script>
 	const memes = [
-	
 	"images/memes/cashier.jpg",
-	
 	"images/memes/cat_buffet.jpg",
-	
 	"images/memes/congratulations.jpg",
-	
 	"images/memes/cow.jpg",
-	
 	"images/memes/dog.jpg",
-	
 	"images/memes/meow_cat.jpg",
-	
+	"images/memes/radiohead.jpg",
 	"images/memes/puter_cat.jpg",
-	"images/memes/animated/catshock.webm",
-	"images/memes/animated/cant_dink.webm",
-	"images/memes/animated/kok_cat.webm",
-	"images/memes/animated/greed.webm",
-	"images/memes/animated/cinema.webm",
-	"images/memes/animated/fish_pog.webm",
+	
+	"images/memes/animated/shock_cat.mp4",
+	"images/memes/animated/cant_dink.mp4",
+	"images/memes/animated/kok_cat.mp4",
+	"images/memes/animated/greed.mp4",
+	"images/memes/animated/cinema.mp4",
+	"images/memes/animated/fish_pog.mp4",
 	
 	];
 	
@@ -209,11 +204,12 @@
 		
 		memeLink.href = file;
 		
-		if (file.endsWith(".webm")) {
+		if (file.endsWith(".mp4")) {
 			memeImg.style.display = "none";
 			
 			memeVideo.style.display = "block";
-			memeVideo.src = file;
+			memeVideo.innerHTML = `<source src="${file}" type="video/mp4">`;
+			memeVideo.load();
 			memeVideo.load();
 			memeVideo.play();
 			} else {
