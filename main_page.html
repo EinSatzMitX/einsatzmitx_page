@@ -105,9 +105,15 @@
 					<h3>Random Meme</h3>
 
 					<a id="meme-link" href="" target="_blank">
-						<img id="random-meme" src="" alt="Random meme" style="max-width:100%; height:auto;">
+
+						<img id="random-image" alt="Random meme" style="max-width:100%; height:auto; display:none;">
+
+						<video id="random-video" autoplay loop muted playsinline style="max-width:100%; height:auto; display:none;">
+						</video>
 					</a>
+
 					<br><br>
+
 					<button class="meme-btn" id="prev-meme">&lt;- Prev</button>
 					<button class="meme-btn" id="new-meme">Random</button>
 					<button class="meme-btn" id="next-meme">Next -&gt;</button>
@@ -183,45 +189,60 @@
 	"images/memes/meow_cat.jpg",
 	
 	"images/memes/puter_cat.jpg",
-	"images/memes/catshock.gif",
-	"images/memes/longcat.gif",
-	"images/memes/cant_dink.gif",
-	"images/memes/kok_cat.gif",
-	"images/memes/greed.gif",
-	"images/memes/cinema.gif",
-	"images/memes/fish_pog.gif",
+	"images/memes/animated/catshock.webm",
+	"images/memes/animated/cant_dink.webm",
+	"images/memes/animated/kok_cat.webm",
+	"images/memes/animated/greed.webm",
+	"images/memes/animated/cinema.webm",
+	"images/memes/animated/fish_pog.webm",
 	
 	];
 	
-	const memeImg = document.getElementById("random-meme");
-	const memeLink = document.getElementById("meme-link");
-	
 	let currentIndex = Math.floor(Math.random() * memes.length);
 	
+	const memeImg = document.getElementById("random-image");
+	const memeVideo = document.getElementById("random-video");
+	const memeLink = document.getElementById("meme-link");
+	
 	function showMeme() {
-		memeImg.src = memes[currentIndex];
-		memeLink.href = memes[currentIndex];
+		const file = memes[currentIndex];
 		
-	}
-	
-	function nextMeme() {
-		currentIndex = (currentIndex + 1) % memes.length;
+		memeLink.href = file;
+		
+		if (file.endsWith(".webm")) {
+			memeImg.style.display = "none";
+			
+			memeVideo.style.display = "block";
+			memeVideo.src = file;
+			memeVideo.load();
+			memeVideo.play();
+			} else {
+				memeVideo.pause();
+				memeVideo.style.display = "none";
+				
+				memeImg.style.display = "block";
+				memeImg.src = file;
+			}
+		}
+		
+		function nextMeme() {
+			currentIndex = (currentIndex + 1) % memes.length;
+			showMeme();
+		}
+		
+		function prevMeme() {
+			currentIndex = (currentIndex - 1 + memes.length) % memes.length;
+			showMeme();
+		}
+		
+		function randomMeme() {
+			currentIndex = Math.floor(Math.random() * memes.length);
+			showMeme();
+		}
+		
 		showMeme();
-	}
-	
-	function prevMeme() {
-		currentIndex = (currentIndex - 1 + memes.length) % memes.length;
-		showMeme();
-	}
-	
-	function randomMeme() {
-		currentIndex = Math.floor(Math.random() * memes.length);
-		showMeme();
-	}
-	
-	showMeme();
-	
-	document.getElementById("new-meme").addEventListener("click", randomMeme);
-	document.getElementById("next-meme").addEventListener("click", nextMeme);
-	document.getElementById("prev-meme").addEventListener("click", prevMeme);
+		
+		document.getElementById("new-meme").addEventListener("click", randomMeme);
+		document.getElementById("next-meme").addEventListener("click", nextMeme);
+		document.getElementById("prev-meme").addEventListener("click", prevMeme);
 </script>
