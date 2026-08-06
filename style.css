@@ -326,14 +326,20 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 6px;
-  flex-wrap: nowrap; /* Keep all three on one line */
+  gap: 4px;
+  flex-wrap: nowrap;
 }
 
 .webring-row img {
-  max-height: 31px;
-  width: auto;
   display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 31px;
+  flex-shrink: 1;
+}
+
+.webring-row a {
+  flex-shrink: 0;
 }
 
 footer {
